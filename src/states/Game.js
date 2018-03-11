@@ -17,6 +17,7 @@ export default class extends Phaser.State {
     this.game.physics.arcade.checkCollision.down = false
 
     this.setUpText()
+    this.setUpbtn()
     this.setUpBricks()
     this.setUpPaddle()
     this.setUpBall()
@@ -104,6 +105,18 @@ export default class extends Phaser.State {
     bricksGroup.position.setTo(
       this.game.world.centerX - bricksGroupWidth,
       this.game.world.centerY - 250
+    )
+  }
+
+  setUpbtn () {
+    this.scoreText = this.game.add.button(
+      20,
+      this.game.height - 68,
+      'github',
+      function () {
+        window.open('https://github.com/mixj93/breakout', '_blank')
+      },
+      this
     )
   }
 
